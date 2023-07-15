@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>My Login Page</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="icon/css/all.min.css">
+	<link rel="stylesheet" href="css/my-login.css">
+	<link rel="stylesheet" href="css/header.css">
+
+</head>
+
+
+<body class="my-login-page bg-secondary">
+
+	<div class="topnav ">
+		<div class="container">
+			<div>
+				<a href="index.html">Navbar</a>
+			</div>
+			<div class="d-flex justify-content-end">
+				<a href="index.html">Home</a>
+				<a class="activated" href="login.html">Login</a>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="row justify-content-md-center h-100">
+		<div class="card-wrapper">
+
+			<div class="card fat">
+				<div class="card-body">
+					<h4 class="card-title">Đăng Nhập</h4>
+					<form action="homelogin.html" method="get">
+
+						<div class="form-group">
+							<label for="email">Email (intern@gmail.com)</label>
+							<input id="email" type="email" class="form-control" name="email" value="" required autofocus
+								placeholder="Email">
+							<small id="emailE">Enail Không Tồn Tại </small>
+						</div>
+
+						<div class="form-group">
+							<label for="password">Password (@1helloworlD)
+								<a href="login.html" class="float-right">
+									Quên Mật Khẩu?
+								</a>
+							</label>
+							<input id="password" type="password" class="form-control" name="password" required data-eye
+								placeholder="Mật Khẩu">
+							<small id="passwordE">Mật Khẩu Hoặc Tài Khoản không đúng</small>
+							<i id="togglePassword" class="far fa-eye"></i>
+						</div>
+
+
+						<div class="form-group">
+							<div class="custom-checkbox custom-control">
+								<input type="checkbox" name="remember" id="remember" class="custom-control-input">
+								<label for="remember" class="custom-control-label">Ghi Nhớ</label>
+
+							</div>
+						</div>
+
+						<div class="form-group m-0" id="submit">
+							<button type="submit" class="btn btn-primary btn-block">Đăng Nhập</button>
+						</div>
+						<div class="mt-4 text-center">
+							Chưa Có tài Khoản? <a href="login.html">Tạo Tài Khoản</a>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="footer">
+				Copyright &copy; 2023 &mdash; Your Company
+			</div>
+		</div>
+	</div>
+
+	<script src="./js/login.js"></script>
+
+</body>
+
+</html>

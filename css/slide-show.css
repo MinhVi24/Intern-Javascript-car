@@ -1,0 +1,201 @@
+.slide-show {
+    /* width: 960px; */
+    width: 100%;
+    height: 530px;
+
+    position: relative;
+    overflow: hidden;
+    margin: 0px auto;
+    /* border-radius: 15px; */
+    border: 0px solid black;
+    background-color: black;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.slide-show img {
+    width: 100%
+}
+
+
+.tieu-de {
+    position: absolute;
+    z-index: 99;
+    display: inline;
+    text-align: center;
+    color: white;
+    top: 10px;
+    font-family: 'SamsungSharpSans', arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 2;
+    width: 100%;
+
+}
+
+
+.mauChuDen,
+.anh>span {
+    /* color: black; */
+    transition: 0.4s;
+    animation: doimau 1s forwards;
+}
+
+
+
+/* css cho phần nút prev và next */
+
+/* css cho phần ảnh */
+
+.slide-show>.anh ul li,
+.slide-show>.anh ul,
+.slide-show>.anh {
+    width: 100%;
+    height: 100%;
+}
+
+.slide-show>.anh ul>li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+
+}
+
+.slide-show>.anh>ul>li.active {
+    opacity: 1;
+}
+
+/* css class Hiệu Ứng */
+
+.bienMatKhiAnNext {
+    animation: bienmat 0.5s forwards;
+
+}
+
+@-webkit-keyframes bienmat {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+
+
+}
+
+.diVaoKhiAnNext {
+    animation: divao 0.5s forwards;
+
+
+}
+
+@-webkit-keyframes divao {
+    from {
+        transform: scale(2);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+.anh>span {
+    position: absolute;
+    bottom: 0;
+    left: 47%;
+    font-size: 12px;
+    color: white;
+}
+
+/*  css chho button pre và next */
+button {
+    outline: none;
+}
+
+.slide-show .nut {
+    position: absolute;
+    top: 45%;
+    width: 97%;
+    margin: 0px 20px;
+}
+
+.slide-show>.nut i {
+    font-size: 45px;
+    cursor: pointer;
+
+    color: #0071e3;
+    z-index: 99;
+}
+
+.slide-show>.nut i:hover {
+
+    color: #062c53;
+}
+
+.list-nut {
+    z-index: 9999;
+    position: absolute;
+    bottom: 0;
+
+    text-align: center;
+    height: 7px;
+
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+
+}
+
+.list-nut ul {
+    display: inline-block;
+}
+
+.list-nut ul li {
+    float: left;
+    margin: 5px;
+    padding: 2px;
+    cursor: pointer;
+    background-color: gray;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid white;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+.list-nut li:hover {
+    /* background-color: rgb(255, 66, 78); */
+    background-color: #032950;
+}
+
+.nut-do {
+    /* background-color: rgb(255, 66, 78)!important; */
+    background-color: #0071e3 !important;
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .slide-show {
+        height: 260px;
+    }
+}
+
+.footer {
+    margin: 40px 0;
+    color: #888;
+    text-align: center;
+}

@@ -1,0 +1,31 @@
+.activated {
+    background-color: #0071e3;
+    border-radius: 69px;
+    justify-content: center;
+    height: 40px;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #343a40;
+    overflow: hidden;
+    height: 55px;
+    padding-top: 8px;
+   
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    
+   
+    padding: 6px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    
+    color: #888;
+  }
+  

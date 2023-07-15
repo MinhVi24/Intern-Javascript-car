@@ -1,0 +1,62 @@
+* {
+    margin: 0px;
+}
+
+small {
+  display: none;
+  color: red;
+}
+
+
+body {
+    background-color: #f7f9fb;
+    font-size: 14px;
+}
+
+.card-wrapper {
+    width: 400px;
+}
+
+.card {
+    border-color: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
+}
+
+.card.fat {
+    padding: 10px;
+}
+
+.card .card-title {
+    margin-bottom: 30px;
+}
+
+.form-control {
+    border-width: 2.3px;
+}
+
+.form-group label {
+    width: 100%;
+}
+
+.btn.btn-block {
+    padding: 12px 10px;
+}
+
+.footer {
+    margin: 40px 0;
+    color: #888;
+    text-align: center;
+}
+
+
+.hidden {
+    display: none;
+}
+
+i{
+    cursor: pointer;
+    position: absolute;
+    top: 218px;
+    right: 42px;
+  }
+

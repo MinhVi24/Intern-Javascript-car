@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="icon/css/all.min.css">
+  <link rel="stylesheet" href="css/1.css">
+  <link rel="stylesheet" href="css/header.css">
+  <script src="js/jquery-3.6.4.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body class="bg-secondary">
+
+  <!-- Navbar -->
+  <div class="topnav ">
+    <div class="container">
+      <div>
+        <a href="homelogin.html">Navbar</a>
+      </div>
+      <div class="d-flex justify-content-end">
+        <a href="homelogin.html">Home</a>
+        <a class="activated" href="order.html">Order</a>
+        <a href="login.html" onclick="return confirmLogout()">Logout</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="container  border border-dark bg-light ">
+    <div class="row">
+      <div class="col-6 leftBody">
+        <form>
+          <div class="row">
+            <div class="col-lg-4">
+              <h3>[A]. Danh sách xe</h3>
+            </div>
+            <div class="col-lg-3">
+              <select id="carType" name="carType" class="custom-select">
+                <option value="0" selected>- Chọn loại xe -</option>
+                <option value="4">4 chỗ</option>
+                <option value="7">7 chỗ</option>
+              </select>
+            </div>
+            <div class="col-lg-4">
+              <select id="carStatus" name="carStatus" class="custom-select">
+                <option value="0" selected>- Chọn Tình Trạng Xe -</option>
+                <option value="1">Có sẵn</option>
+                <option value="2">Đang thuê</option>
+              </select>
+            </div>
+            <div class="col-lg-1">
+              <button id="searchCar" class="btn btn-primary ">Tìm xe</button>
+            </div>
+          </div>
+
+
+        </form>
+        <hr>
+        <table class=" table table-bordered">
+          <thead class="bg-primary ">
+            <tr>
+              <th>#</th>
+              <th>Hình xe</th>
+              <th>Hãng xe</th>
+              <th>Loại xe</th>
+              <th>Giá xe/Ngày</th>
+              <th>Tình trạng</th>
+              <th>item</th>
+            </tr>
+          </thead>
+          <tbody id="carTable"></tbody>
+        </table>
+      </div>
+      <div class="col-5 rightBody" style="margin-left: 90px;">
+        <form>
+          <div class="row" id="form2">
+            <h3>[B]. Thông tin xe được chọn</h3>
+            <div class="col-4">
+              <label for="carName" class="form-label">Hãng xe</label>
+              <input type="text" class="form-control" id="carName" name="carName" disabled>
+              <small id="carNameE">Không Được Để Trống</small>
+            </div>
+            <div class="col-4">
+              <label for="carType1" class="form-label">Loại xe</label>
+              <input type="text" class="form-control" id="carType1" name="carType1" disabled>
+              <small id="carType1E">Không Được Để Trống</small>
+            </div>
+            <div class="col-4">
+              <label for="carPrice" class="form-label">Giá xe</label>
+              <input type="text" class="form-control" id="carPrice" name="carPrice" disabled>
+              <small id="carPriceE">Không Được Để Trống</small>
+            </div>
+          </div>
+          <div id="form2">
+
+            <h3>[C]. Thông tin thuê xe</h3>
+            <div class="row">
+              <div class="col-6">
+                <label for="fullName" class="form-label">Họ và tên</label>
+                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Nhập Họ Tên">
+                <small id="fullNameE">Không Được Để Trống</small>
+              </div>
+              <div class="col-6">
+                <label for="phone" class="form-label">Điện thoại</label>
+                <input type="number" class="form-control" id="phone" name="phone" maxLength="9" placeholder="Nhập SDT">
+                <small id="phoneE">Phải Nhập Đủ 9 Số</small>
+              </div>
+            </div>
+
+            <div>
+              <label for="address" class="form-label">Địa chỉ</label>
+              <input type="text" class="form-control" id="address" name="address" placeholder=" Nhập Địa Chỉ">
+              <small id="addressE">Không Được Để Trống</small>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label for="rentDate" class="form-label">Ngày nhận</label>
+                <input type="date" class="form-control" id="rentDate" name="rentDate">
+                <small id="rentDateE">Ngày Nhận Phải Lớn Hơn Ngày Hiện Tại</small>
+              </div>
+              <div class="col-6">
+                <label for="returnDate" class="form-label">Ngày trả </label>
+                <input type="date" class="form-control" id="returnDate" name="returnDate">
+                <small id="returnDateE">Ngày Trả Xe Phải Lơn Hơn Ngày Nhận Xe</small>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-7">
+                <input type="checkbox" class="form-check-input" name="self" id="self" value="tự lái" checked>Tự lái
+                <small id="selfE" class="error">*please check</small>
+              </div>
+              <div class="col-3">
+                <input type="checkbox" class="form-check-input" name="hire" id="hire" value="Có thuê tài xê">Thuê tài
+                <small id="hireE" class="error">*please check</small>
+              </div>
+
+              <div id="traThem" class="hidden">
+                <h5>Trả thêm phí</h5>
+                <p>+ 500,000 VNĐ/Ngày - Đối với xe 4 chỗ</p>
+                <p>+ 550,000 VNĐ/Ngày - Đối với xe 7 chỗ</p>
+              </div>
+            </div>
+
+            <button id="saveBtn" class="btn btn-primary" name="saveBtn">Lưu Thông Tin</button>
+            <button id="updateBtn" class="btn btn-primary" name="updateBtn">Cập Nhật Thông Tin</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <h3>[D]. Thông tin</h3>
+      <table class="table table-bordered">
+        <thead class="bg-primary">
+          <tr>
+            <th>#</th>
+            <th>Họ và tên</th>
+            <th>Số điện thoại</th>
+            <th>Hãng xe</th>
+            <th>Loại xe</th>
+            <th>Giá xe/Ngày</th>
+            <th>Ngày nhận xe</th>
+            <th>Ngày trả xe</th>
+            <th>Số ngày thuê</th>
+            <th>Hình thức</th>
+            <th>Tiền thuê xe</th>
+            <th>Item</th>
+          </tr>
+        </thead>
+        <tbody id="result"></tbody>
+        
+      </table>
+    </div>
+
+    
+  </div>
+  <div class="footer">
+    Copyright &copy; 2023 &mdash; Your Company
+  </div>
+  
+
+
+  <script src="js/order.js"></script>
+</body>
+
+</html>
