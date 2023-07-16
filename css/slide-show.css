@@ -188,14 +188,14 @@ button {
 
 
 
-@media screen and (max-width: 500px) {
-    .slide-show {
-        height: 260px;
-    }
-}
-
 .footer {
     margin: 40px 0;
     color: #888;
     text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    .slide-show {
+        height: 260px;
+    }
 }

@@ -24,6 +24,7 @@ body {
 
 .card.fat {
     padding: 10px;
+    margin-left: 42px;
 }
 
 .card .card-title {
@@ -60,3 +61,33 @@ i{
     right: 42px;
   }
 
+#rememberl{
+    margin-top: 4px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .card.fat {
+        margin-left: 205px;
+    }
+    .card-wrapper {
+        width: 729px;
+    }
+}
+
+@media screen and (max-width: 549px) {
+    .card.fat {
+        margin-left: 100px;
+    }
+    .card-wrapper {
+        width: auto;
+    }
+}
+@media screen and (max-width: 400px) {
+    .card.fat {
+        margin-left: 50px;
+    }
+    .card-wrapper {
+        width: auto;
+    }
+}
