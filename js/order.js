@@ -444,11 +444,14 @@ $(document).on("click", ".deleteBtn", function (event) {
 	event.stopPropagation();
 	let index = $(this).data("index");
 	if (index !== undefined) {
-		record.splice(index, 1);
-		displayAll(record);
+		let customerName = record[index].fullName;
+		let confirmation = confirm("Bạn có chắc muốn xóa khách hàng: " + customerName + "?");
+		if (confirmation) {
+			record.splice(index, 1);
+			displayAll(record);
+		}
 	}
 });
-
 
 
 
